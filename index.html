@@ -406,7 +406,7 @@ footer p{font-family:'JetBrains Mono',monospace;color:var(--text3);font-size:11p
     <div class="name-line"><span class="nf">Aryan </span><span class="nl">Thorat</span></div>
   </div>
   <div class="typed-wrap"><span id="typedTxt"></span><span class="tcur"></span></div>
-  <p class="hero-desc">Engineering student at NBNSTIC bridging the gap between hardware logic and software intelligence. Passionate about VLSI, systems programming, and clean code.</p>
+  <p class="hero-desc">ENTC Engineering student at NBN Sinhgad, Pune. Strong foundation in VLSI, Verilog, Web Development & DBMS. SSC topper with 93.20%.</p>
   <div class="hero-btns">
     <button class="btn-p" onclick="scrollTo('projects')">View Projects →</button>
     <button class="btn-gold" onclick="downloadResume()">⬇ Download Resume</button>
@@ -429,15 +429,15 @@ footer p{font-family:'JetBrains Mono',monospace;color:var(--text3);font-size:11p
   <div class="sh"><span class="snum">01 //</span><h2 class="stitle">About <span>Me</span></h2><div class="sline"></div></div>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm an Electronics & Telecommunication Engineering student exploring the vast universe of technology — from deep silicon architectures to full-stack applications.</p>
-      <p>My journey spans hardware domains like VLSI design and operating systems, as well as software languages and frameworks. I love building things that actually work.</p>
-      <p>When I'm not writing code or designing circuits, I'm exploring new tech and working on projects that push my understanding further.</p>
+      <p>I'm <strong>Aryan Ranjit Thorat</strong>, an Electronics & Telecommunication Engineering student at NBN Sinhgad Technical Institute Campus, Pune (2023–2027).</p>
+      <p>I have a strong foundation in both hardware (VLSI, Verilog, SystemVerilog) and software (Web Development, DBMS). Eager to apply academic knowledge to real-world engineering challenges.</p>
+      <p>SSC topper with <strong>93.20%</strong> — driven by curiosity, problem-solving and a passion for dual-domain engineering.</p>
       <div class="badge-row">
         <span class="badge">ENTC Engineering</span>
-        <span class="badge">NBNSTIC</span>
+        <span class="badge">NBN Sinhgad, Pune</span>
         <span class="badge">Hardware + Software</span>
+        <span class="badge">SSC — 93.20% ⭐</span>
         <span class="badge">Open to Collaborate</span>
-        <span class="badge">Pune, Maharashtra</span>
       </div>
     </div>
     <div class="stats-grid">
@@ -545,8 +545,8 @@ footer p{font-family:'JetBrains Mono',monospace;color:var(--text3);font-size:11p
 
   <!-- SOCIALS -->
   <div class="social-row">
-    <a class="social-link" href="https://github.com" target="_blank">⬡ GitHub</a>
-    <a class="social-link" href="https://linkedin.com" target="_blank">⬡ LinkedIn</a>
+    <a class="social-link" href="https://github.com/Aryan14thor" target="_blank">⬡ GitHub</a>
+    <a class="social-link" href="https://www.linkedin.com/in/aryan-thorat-7963bb386" target="_blank">⬡ LinkedIn</a>
     <a class="social-link" href="mailto:aryanthorat.nbnstic.entc@gmail.com">⬡ Email Me</a>
     <a class="social-link" href="tel:+917028245230">⬡ Call Me</a>
   </div>
@@ -559,8 +559,8 @@ footer p{font-family:'JetBrains Mono',monospace;color:var(--text3);font-size:11p
   <div class="flogo">Aryan Thorat</div>
   <p>Crafted with passion · AryanPortfolio · 2025</p>
   <div class="fsocials">
-    <a class="fsi" href="https://github.com" target="_blank">⬡</a>
-    <a class="fsi" href="https://linkedin.com" target="_blank">in</a>
+    <a class="fsi" href="https://github.com/Aryan14thor" target="_blank">⬡</a>
+    <a class="fsi" href="https://www.linkedin.com/in/aryan-thorat-7963bb386" target="_blank">in</a>
     <a class="fsi" href="mailto:aryanthorat.nbnstic.entc@gmail.com">@</a>
   </div>
 </footer>
@@ -570,12 +570,12 @@ footer p{font-family:'JetBrains Mono',monospace;color:var(--text3);font-size:11p
 // DATA
 // ══════════════════════════════════
 let D={
-  hw:['VLSI','Operating System (Linux)','C','C++'],
-  sw:['Java','HTML','CSS'],
+  hw:['VLSI','Verilog','SystemVerilog','Operating System (Linux)','C','C++'],
+  sw:['HTML','CSS','JavaScript','DBMS','SQL','Java'],
   projects:[
-    {title:'VLSI Logic Synthesizer',type:'HARDWARE',desc:'Designed and implemented digital logic circuits using VLSI techniques with optimised gate-level synthesis for minimal area and power.',tags:['VLSI','Digital Logic','CMOS']},
-    {title:'Linux Kernel Module',type:'SYSTEMS',desc:'Developed a custom kernel module for Linux exploring low-level OS interaction, device driver concepts and memory management.',tags:['Linux','C','Kernel']},
-    {title:'Web Portfolio Builder',type:'WEB',desc:'Built a dynamic personal portfolio with animated UI components and immersive space-themed frontend.',tags:['HTML','CSS','Java']}
+    {title:'Web Development',type:'WEB',desc:'Built responsive web pages using HTML, CSS & JavaScript. Designed modern UI components focused on usability and visual appeal.',tags:['HTML','CSS','JavaScript']},
+    {title:'VLSI / Digital Design',type:'HARDWARE',desc:'Designed digital logic circuits and implemented RTL designs using Verilog HDL. Wrote SystemVerilog testbenches for simulation and functional verification.',tags:['VLSI','Verilog','SystemVerilog']},
+    {title:'Database Management',type:'SOFTWARE',desc:'Designed normalized database schemas and wrote complex SQL queries. Applied DBMS concepts including ER modelling and normalization.',tags:['DBMS','SQL']}
   ],
   messages:[],
   visitors:1
@@ -731,11 +731,9 @@ function sendMsg(){
 // RESUME DOWNLOAD
 // ══════════════════════════════════
 function downloadResume(){
-  const content=`ARYAN THORAT\nENTC Engineering Student — NBNSTIC\nPhone: +91 7028245230\nEmail: aryanthorat.nbnstic.entc@gmail.com\nLocation: Pune, Maharashtra\n\nHARDWARE SKILLS\n${D.hw.join(', ')}\n\nSOFTWARE SKILLS\n${D.sw.join(', ')}\n\nPROJECTS\n${D.projects.map((p,i)=>`${i+1}. ${p.title} [${p.type}]\n   ${p.desc}`).join('\n\n')}`;
-  const blob=new Blob([content],{type:'text/plain'});
   const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download='Aryan_Thorat_Resume.txt';
+  a.href='Aryan_Thorat_Resume.pdf';
+  a.download='Aryan_Thorat_Resume.pdf';
   a.click();
 }
 
