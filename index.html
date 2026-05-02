@@ -580,14 +580,27 @@ let D={
   messages:[],
   visitors:1
 };
-const KEY='aryport_v3';
-function save(){try{localStorage.setItem(KEY,JSON.stringify(D));}catch(e){}}
-function load(){try{const s=localStorage.getItem(KEY);if(s)D=JSON.parse(s);}catch(e){}}
-load();
+// ══ JSONBIN CLOUD DATABASE ══
+const BIN_ID='69f5f4c0aaba882197621945';
+const MKEY='$2a$10$T5689Dsy68eoKrIwjGpCJecXAHz39.VeHgFmFZlB0ChcI2L65GbM2';
+const AKEY='$2a$10$8hiESa1ogYLFGWydexDfU.rNyE9NxTrUn13IJNbPUGCbiboywdTji';
+const BURL='https://api.jsonbin.io/v3/b/'+BIN_ID;
+document.getElementById('vcnt').textContent='...';
 
-// visitor count
-D.visitors=(D.visitors||1)+1; save();
-document.getElementById('vcnt').textContent=D.visitors;
+async function save(){
+  try{
+    await fetch(BURL,{method:'PUT',
+      headers:{'Content-Type':'application/json','X-Master-Key':MKEY,'X-Access-Key':AKEY},
+      body:JSON.stringify(D)});
+  }catch(e){console.error('Save failed',e);}
+}
+async function loadDB(){
+  try{
+    const r=await fetch(BURL+'/latest',{headers:{'X-Master-Key':MKEY,'X-Access-Key':AKEY}});
+    const j=await r.json();
+    if(j.record)D=j.record;
+  }catch(e){console.error('Load failed',e);}
+}
 
 // ══════════════════════════════════
 // LOADER
@@ -863,8 +876,15 @@ document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
 // ESCAPE
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
-// INIT
-renderSkills(); renderProjects();
+// INIT — load from cloud then render
+(async()=>{
+  await loadDB();
+  D.visitors=(D.visitors||1)+1;
+  document.getElementById('vcnt').textContent=D.visitors;
+  await save();
+  renderSkills();
+  renderProjects();
+})();
 </script>
 </body>
 </html>
